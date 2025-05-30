@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | NeoTech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
+                        'float': 'float 3s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s linear infinite',
+                    },
+                    keyframes: {
+                        'glow-pulse': {
+                            '0%': { boxShadow: '0 0 20px rgba(0, 191, 255, 0.5)' },
+                            '100%': { boxShadow: '0 0 30px rgba(0, 191, 255, 0.8), 0 0 40px rgba(0, 191, 255, 0.4)' }
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-3px)' }
+                        },
+                        'shimmer': {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .neon-border {
+            box-shadow: 
+                0 0 20px rgba(0, 191, 255, 0.3),
+                inset 0 0 20px rgba(0, 191, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00BFFF, #1E90FF, #00CED1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .shimmer-effect {
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            background-size: 200% 100%;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen pt-20">
+    <!-- Header con barra de búsqueda y menú hamburguesa -->
+    <header class="w-full px-6 py-4 flex items-center justify-between bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-blue-600/20 glass-effect neon-border border border-cyan-400/30 fixed top-0 left-0 right-0 z-50">
+        <div class="flex-1 flex items-center">
+            <input type="text" placeholder="Buscar..." class="w-full max-w-md px-4 py-2 rounded-lg glass-effect bg-white/10 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-cyan-400">
+            <button id="menuBtn" class="ml-4 p-2 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/40 transition-colors duration-300">
+                <svg class="w-7 h-7 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        <div class="flex items-center ml-6">
+            <img src="https://i.pinimg.com/236x/54/72/d1/5472d1b09d3d724228109d381d617326.jpg" alt="Foto de perfil" class="w-12 h-12 rounded-full object-cover border-2 border-cyan-400/50 shadow-cyan-400/25">
+        </div>
+        <div id="menu" class="hidden flex-col gap-2 bg-gradient-to-br from-slate-800/90 to-cyan-900/80 glass-effect neon-border rounded-xl p-6 w-full max-w-xs text-white absolute left-1/2 top-20 -translate-x-1/2 z-50">
+            <a href="#" class="block py-2 px-4 rounded-lg hover:bg-cyan-500/20 transition">Favoritos</a>
+            <a href="#" class="block py-2 px-4 rounded-lg hover:bg-cyan-500/20 transition">Eventos pendientes</a>
+            <a href="#" class="block py-2 px-4 rounded-lg hover:bg-cyan-500/20 transition">Eventos</a>
+            <a href="#" class="block py-2 px-4 rounded-lg hover:bg-cyan-500/20 transition">Calendario</a>
+        </div>
+    </header>
+    <main class="pt-32 max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-12 text-center animate-float">Eventos y Torneos</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="bg-gradient-to-br from-blue-600/20 to-cyan-500/20 glass-effect border border-cyan-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
+                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Volleyball" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-cyan-400/40 shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-2">Torneo de Volleyball</h3>
+                <p class="text-white/70 mb-2">Participa en el torneo anual de volleyball y demuestra tus habilidades en la cancha.</p>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-green-400 font-semibold text-sm">Activo</span>
+                </div>
+                <div class="flex justify-between text-sm mb-1">
+                    <span class="text-white/70">Inicio: 2025-06-10</span>
+                    <span class="text-green-400 font-bold">14/50 personas</span>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-green-600/20 to-emerald-500/20 glass-effect border border-emerald-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
+                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Fútbol" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-emerald-400/40 shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-2">Torneo de Fútbol</h3>
+                <p class="text-white/70 mb-2">Forma tu equipo y compite por el trofeo en el torneo de fútbol escolar.</p>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-green-400 font-semibold text-sm">Activo</span>
+                </div>
+                <div class="flex justify-between text-sm mb-1">
+                    <span class="text-white/70">Inicio: 2025-06-15</span>
+                    <span class="text-green-400 font-bold">28/28 personas</span>
+                </div>
+                <div class="text-red-400 font-bold text-sm">Ocupado</div>
+            </div>
+            <div class="bg-gradient-to-br from-purple-600/20 to-blue-500/20 glass-effect border border-purple-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
+                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Desarrollo Web" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-purple-400/40 shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-2">Concurso de Desarrollo de Páginas</h3>
+                <p class="text-white/70 mb-2">Demuestra tu creatividad y habilidades en programación web creando la mejor página.</p>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="inline-block w-2 h-2 rounded-full bg-red-400"></span>
+                    <span class="text-red-400 font-semibold text-sm">Evento concluido</span>
+                </div>
+                <div class="flex justify-between text-sm mb-1">
+                    <span class="text-white/70">Inicio: 2025-05-10</span>
+                    <span class="text-red-400 font-bold">20/20 personas</span>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-pink-600/20 to-purple-500/20 glass-effect border border-pink-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
+                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Diseño a Mano" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-pink-400/40 shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-2">Mejor Diseño a Mano</h3>
+                <p class="text-white/70 mb-2">Participa con tus dibujos y diseños hechos a mano para ganar el reconocimiento al mejor arte.</p>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-green-400 font-semibold text-sm">Activo</span>
+                </div>
+                <div class="flex justify-between text-sm mb-1">
+                    <span class="text-white/70">Inicio: 2025-06-20</span>
+                    <span class="text-green-400 font-bold">7/15 personas</span>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-yellow-500/20 to-orange-400/20 glass-effect border border-yellow-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
+                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="Ortografía" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-yellow-400/40 shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-2">Persona con Más Ortografía</h3>
+                <p class="text-white/70 mb-2">Demuestra tu dominio del idioma y gana el premio a la mejor ortografía.</p>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="inline-block w-2 h-2 rounded-full bg-red-400"></span>
+                    <span class="text-red-400 font-semibold text-sm">Evento concluido</span>
+                </div>
+                <div class="flex justify-between text-sm mb-1">
+                    <span class="text-white/70">Inicio: 2025-05-01</span>
+                    <span class="text-red-400 font-bold">18/18 personas</span>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-emerald-600/20 to-cyan-500/20 glass-effect border border-emerald-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
+                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80" alt="Manualidades" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-emerald-400/40 shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-2">Concurso de Manualidades</h3>
+                <p class="text-white/70 mb-2">Crea manualidades originales y compite por el primer lugar en creatividad.</p>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-green-400 font-semibold text-sm">Activo</span>
+                </div>
+                <div class="flex justify-between text-sm mb-1">
+                    <span class="text-white/70">Inicio: 2025-06-18</span>
+                    <span class="text-green-400 font-bold">3/10 personas</span>
+                </div>
+            </div>
+            <div class="bg-gradient-to-br from-cyan-600/20 to-blue-500/20 glass-effect border border-cyan-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
+                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Salto Alto" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-cyan-400/40 shadow-lg">
+                <h3 class="text-xl font-semibold text-white mb-2">El que Salte Más Alto</h3>
+                <p class="text-white/70 mb-2">Pon a prueba tu energía y compite para ver quién logra el salto más alto.</p>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-green-400 font-semibold text-sm">Activo</span>
+                </div>
+                <div class="flex justify-between text-sm mb-1">
+                    <span class="text-white/70">Inicio: 2025-06-12</span>
+                    <span class="text-green-400 font-bold">9/20 personas</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menu = document.getElementById('menu');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
