@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto</title>
+    <title>Schoolmeet</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2917/2917995.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -97,14 +98,7 @@
                             <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 
                                         group-hover:w-full transition-all duration-300"></div>
                         </a>
-                        <a href="proyectos.html" class="text-white/90 hover:text-cyan-300 transition-all duration-300 
-                                        relative group font-medium">
-                            <span class="relative z-10">Proyectos</span>
-                            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-cyan-500/0 
-                                        rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10"></div>
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 
-                                        group-hover:w-full transition-all duration-300"></div>
-                        </a>
+
                         <a href="acercade.html" class="text-white/90 hover:text-cyan-300 transition-all duration-300 
                                         relative group font-medium">
                             <span class="relative z-10">Acerca de</span>
@@ -121,7 +115,7 @@
                             <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 
                                         group-hover:w-full transition-all duration-300"></div>
                         </a>
-                        <a href="#" class="text-white/90 hover:text-cyan-300 transition-all duration-300 
+                        <a href="contacto.html" class="text-white/90 hover:text-cyan-300 transition-all duration-300 
                                         relative group font-medium">
                             <span class="relative z-10">Contacto</span>
                             <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-500/20 to-cyan-500/0 
@@ -158,7 +152,7 @@
                             </div>
                             <div class="hidden sm:block">
                                 <p class="text-white font-medium text-sm group-hover:text-cyan-300 transition-colors duration-300">
-                                    Alex Rivera
+                                    Equipo Developer
                                 </p>
                                 <p class="text-white/60 text-xs">
                                     Desarrollador
@@ -188,13 +182,66 @@
         <div class="text-center mb-16">
             <h1 class="text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 
                     bg-clip-text text-transparent mb-6 animate-float">
-                Diseño Futurista
+                Bienvenido a Schoolmeet
             </h1>
             <p class="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-                Esta barra de navegación presenta un diseño futurista con degradados azules, efectos de cristal, 
-                animaciones suaves y elementos de neón que crean una experiencia visual impresionante.
+                Un software especializado en el control de eventos y jornadas extracurriculares de
+                universidades, colegios y entre otras.
             </p>
         </div>
+
+        <!-- Carrusel de eventos escolares -->
+        <div class="max-w-3xl mx-auto mt-20 mb-16">
+            <div id="carousel-eventos" class="relative overflow-hidden rounded-2xl shadow-2xl neon-border">
+                <div class="carousel-slides flex transition-transform duration-700">
+                    <img src="../images/competencia diseño.jpg" alt="Evento 1" class="w-full h-80 object-cover flex-shrink-0">
+                    <img src="../images/desarrollo web.jpg" alt="Evento 2" class="w-full h-80 object-cover flex-shrink-0">
+                    <img src="../images/Reunión 1.jpg" alt="Evento 3" class="w-full h-80 object-cover flex-shrink-0">
+                </div>
+                <!-- Controles -->
+                <button id="prev-slide" class="absolute top-1/2 left-4 -translate-y-1/2 bg-cyan-500/80 hover:bg-cyan-600 text-white rounded-full p-2 shadow-lg z-10 transition-all">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <button id="next-slide" class="absolute top-1/2 right-4 -translate-y-1/2 bg-cyan-500/80 hover:bg-cyan-600 text-white rounded-full p-2 shadow-lg z-10 transition-all">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
+                <!-- Indicadores -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+                    <span class="carousel-dot w-3 h-3 bg-cyan-400 rounded-full inline-block cursor-pointer"></span>
+                    <span class="carousel-dot w-3 h-3 bg-white/40 rounded-full inline-block cursor-pointer"></span>
+                    <span class="carousel-dot w-3 h-3 bg-white/40 rounded-full inline-block cursor-pointer"></span>
+                </div>
+            </div>
+        </div>
+        <script>
+        // Carrusel JS
+        const slides = document.querySelectorAll('#carousel-eventos .carousel-slides img');
+        const dots = document.querySelectorAll('#carousel-eventos .carousel-dot');
+        let current = 0;
+        function showSlide(idx) {
+            const slidesContainer = document.querySelector('#carousel-eventos .carousel-slides');
+            slidesContainer.style.transform = `translateX(-${idx * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('bg-cyan-400', i === idx);
+                dot.classList.toggle('bg-white/40', i !== idx);
+            });
+        }
+        document.getElementById('prev-slide').onclick = () => {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        };
+        document.getElementById('next-slide').onclick = () => {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        };
+        dots.forEach((dot, i) => {
+            dot.onclick = () => {
+                current = i;
+                showSlide(current);
+            };
+        });
+        showSlide(0);
+        </script>
 
         <!-- Feature Cards -->
         <div class="grid md:grid-cols-3 gap-8 mt-12">
@@ -207,8 +254,8 @@
                             d="M13 10V3L4 14h7v7l9-11h-7z"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-semibold text-white mb-2">Efectos de Luz</h3>
-                <p class="text-white/70">Brillos neón y pulsos de luz que dan vida al diseño</p>
+                <h3 class="text-xl font-semibold text-white mb-2">Feria de Ciencias</h3>
+                <p class="text-white/70">Participa en la exposición de proyectos científicos y tecnológicos realizados por los estudiantes. ¡Premios a los mejores experimentos!</p>
             </div>
 
             <div class="bg-gradient-to-br from-purple-600/20 to-blue-500/20 glass-effect 
@@ -220,8 +267,8 @@
                             d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-semibold text-white mb-2">Cristal y Blur</h3>
-                <p class="text-white/70">Efectos de vidrio con desenfoque de fondo moderno</p>
+                <h3 class="text-xl font-semibold text-white mb-2">Olimpiadas Deportivas</h3>
+                <p class="text-white/70">Disfruta de competencias deportivas entre cursos: fútbol, baloncesto, atletismo y más. ¡Apoya a tu equipo y vive el espíritu escolar!</p>
             </div>
 
             <div class="bg-gradient-to-br from-emerald-600/20 to-cyan-500/20 glass-effect 
@@ -233,10 +280,42 @@
                             d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"/>
                     </svg>
                 </div>
-                <h3 class="text-xl font-semibold text-white mb-2">Animaciones</h3>
-                <p class="text-white/70">Transiciones fluidas y efectos de flotación elegantes</p>
+                <h3 class="text-xl font-semibold text-white mb-2">Semana Cultural</h3>
+                <p class="text-white/70">Una semana llena de actividades artísticas, presentaciones musicales, teatro y muestras gastronómicas. ¡Celebra la diversidad y el talento escolar!</p>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="relative bg-gradient-to-br from-purple-800 via-purple-600 to-blue-900 text-white mt-24 pt-12 pb-6 px-6 overflow-hidden shadow-2xl neon-border">
+        <!-- Futuristic Glow -->
+        <div class="absolute -top-10 -left-10 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl animate-glow-pulse"></div>
+        <div class="absolute -bottom-16 right-0 w-96 h-32 bg-blue-500/20 rounded-full blur-2xl animate-glow-pulse"></div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 relative z-10">
+            <div>
+                <h2 class="text-3xl font-bold mb-2 gradient-text animate-float">Schoolmeet</h2>
+                <p class="text-white/80">Ofrecemos una gestión de eventos innovadora para ayudar a gestionar lo que tengas en mente y destaques en el mercado actual.</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-2 gradient-text">Enlaces rápidos</h3>
+                <ul class="space-y-1">
+                    <li><a href="index.html" class="hover:underline font-semibold hover:text-cyan-300 transition-colors">Inicio</a></li>
+                    <li><a href="acercade.html" class="hover:underline hover:text-cyan-300 transition-colors">Acerca de</a></li>
+                    <li><a href="contacto.html" class="hover:underline hover:text-cyan-300 transition-colors">Contacto</a></li>
+                    <li><a href="login.html" class="hover:underline hover:text-cyan-300 transition-colors">Iniciar sesión</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-2 gradient-text">Contacto</h3>
+                <p><span class="italic">Calle Principal Avenida 14 #68-23</span></p>
+                <p class="mb-1">Medellín, Colombia</p>
+                <p class="mb-1">Email: <a href="mailto:soporte@schoolmeet.com" class="underline hover:text-cyan-300 transition-colors">soporte@schoolmeet.com</a></p>
+                <p>Teléfono: 444 44 44</p>
+            </div>
+        </div>
+        <div class="border-t border-white/20 mt-8 pt-4 text-center text-white/80 text-sm relative z-10">
+            © 2025 Schoolmeet. Todos los derechos reservados.
+        </div>
+    </footer>
 </body>
 </html>

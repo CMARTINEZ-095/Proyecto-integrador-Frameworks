@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Perfil | Schoolmeet</title>
+    <title>Favoritos | Schoolmeet</title>
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2917/2917995.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -86,12 +86,9 @@
         </div>
     </header>
     <main class="pt-32 max-w-6xl mx-auto px-6">
-        <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-12 text-center animate-float">Eventos y Torneos</h2>
-        <div class="flex justify-center mb-8">
-            <button id="openRegisterModal" type="button" class="w-full max-w-xs mx-auto block bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-2 rounded-lg text-center transition shadow-lg">Registrarme a un evento</button>
-        </div>
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-12 text-center animate-float">Mis Favoritos</h2>
         <div class="grid md:grid-cols-3 gap-10">
-            <!-- Tarjeta 1: Evento disponible -->
+            <!-- Evento 1 -->
             <div class="bg-gradient-to-br from-blue-600/20 to-cyan-500/20 glass-effect border border-cyan-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
                 <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
                 <img src="../images/volley 6.jpg" alt="Volleyball" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-cyan-400/40 shadow-lg">
@@ -106,8 +103,7 @@
                     <span class="text-green-400 font-bold">14/50 personas</span>
                 </div>
             </div>
-            
-            <!-- Tarjeta 2: Evento disponible -->
+            <!-- Evento 2 -->
             <div class="bg-gradient-to-br from-green-600/20 to-emerald-500/20 glass-effect border border-emerald-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
                 <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
                 <img src="../images/equipo 1.jpg" alt="Fútbol" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-emerald-400/40 shadow-lg">
@@ -123,25 +119,7 @@
                 </div>
                 <div class="text-red-400 font-bold text-sm">Ocupado</div>
             </div>
-            
-            <!-- Tarjeta 3: Evento terminado -->
-            <div class="bg-gradient-to-br from-purple-600/20 to-blue-500/20 glass-effect border border-purple-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
-                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Desarrollo Web" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-purple-400/40 shadow-lg">
-                <h3 class="text-xl font-semibold text-white mb-2">Concurso de Desarrollo de Páginas</h3>
-                <p class="text-white/70 mb-2">Demuestra tu creatividad y habilidades en programación web creando la mejor página.</p>
-                <div class="flex items-center gap-2 mb-1">
-                    <span class="inline-block w-2 h-2 rounded-full bg-red-400"></span>
-                    <span class="text-red-400 font-semibold text-sm">Evento terminado</span>
-                </div>
-                <div class="flex justify-between text-sm mb-1">
-                    <span class="text-white/70">Inicio: 2025-05-10</span>
-                    <span class="text-red-400 font-bold">20/20 personas</span>
-                </div>
-                <div class="mt-3 w-full bg-gray-500 text-white font-semibold py-2 rounded-lg text-center cursor-not-allowed opacity-70">Evento cerrado</div>
-            </div>
-            
-            <!-- Tarjeta 4: Evento disponible -->
+            <!-- Evento 3 -->
             <div class="bg-gradient-to-br from-pink-600/20 to-purple-500/20 glass-effect border border-pink-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
                 <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
                 <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Diseño a Mano" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-pink-400/40 shadow-lg">
@@ -156,114 +134,7 @@
                     <span class="text-green-400 font-bold">7/15 personas</span>
                 </div>
             </div>
-            
-            <!-- Tarjeta 5: Evento terminado -->
-            <div class="bg-gradient-to-br from-yellow-500/20 to-orange-400/20 glass-effect border border-yellow-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
-                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
-                <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="Ortografía" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-yellow-400/40 shadow-lg">
-                <h3 class="text-xl font-semibold text-white mb-2">Persona con Más Ortografía</h3>
-                <p class="text-white/70 mb-2">Demuestra tu dominio del idioma y gana el premio a la mejor ortografía.</p>
-                <div class="flex items-center gap-2 mb-1">
-                    <span class="inline-block w-2 h-2 rounded-full bg-red-400"></span>
-                    <span class="text-red-400 font-semibold text-sm">Evento terminado</span>
-                </div>
-                <div class="flex justify-between text-sm mb-1">
-                    <span class="text-white/70">Inicio: 2025-05-01</span>
-                    <span class="text-red-400 font-bold">18/18 personas</span>
-                </div>
-                <div class="mt-3 w-full bg-gray-500 text-white font-semibold py-2 rounded-lg text-center cursor-not-allowed opacity-70">Evento cerrado</div>
-            </div>
-            
-            <!-- Tarjeta 6: Evento disponible -->
-            <div class="bg-gradient-to-br from-emerald-600/20 to-cyan-500/20 glass-effect border border-emerald-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
-                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
-                <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80" alt="Manualidades" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-emerald-400/40 shadow-lg">
-                <h3 class="text-xl font-semibold text-white mb-2">Concurso de Manualidades</h3>
-                <p class="text-white/70 mb-2">Crea manualidades originales y compite por el primer lugar en creatividad.</p>
-                <div class="flex items-center gap-2 mb-1">
-                    <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                    <span class="text-green-400 font-semibold text-sm">Activo</span>
-                </div>
-                <div class="flex justify-between text-sm mb-1">
-                    <span class="text-white/70">Inicio: 2025-06-18</span>
-                    <span class="text-green-400 font-bold">3/10 personas</span>
-                </div>
-            </div>
-            
-            <!-- Tarjeta 7: Evento disponible -->
-            <div class="bg-gradient-to-br from-cyan-600/20 to-blue-500/20 glass-effect border border-cyan-400/30 rounded-2xl p-6 neon-border relative overflow-hidden">
-                <div class="absolute inset-0 shimmer-effect animate-shimmer opacity-20 rounded-2xl"></div>
-                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Salto Alto" class="w-full h-32 object-cover rounded-xl mb-4 border-2 border-cyan-400/40 shadow-lg">
-                <h3 class="text-xl font-semibold text-white mb-2">El que Salte Más Alto</h3>
-                <p class="text-white/70 mb-2">Pon a prueba tu energía y compite para ver quién logra el salto más alto.</p>
-                <div class="flex items-center gap-2 mb-1">
-                    <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                    <span class="text-green-400 font-semibold text-sm">Activo</span>
-                </div>
-                <div class="flex justify-between text-sm mb-1">
-                    <span class="text-white/70">Inicio: 2025-06-12</span>
-                    <span class="text-green-400 font-bold">9/20 personas</span>
-                </div>
-            </div>
         </div>
-        <!-- Modal de selección de evento -->
-        <div id="registerModal" class="fixed inset-0 z-50 items-center justify-center bg-black/60 hidden">
-            <div class="bg-slate-900 rounded-2xl p-8 max-w-md w-full shadow-2xl border-2 border-cyan-400/40 mx-auto mt-32 flex flex-col">
-                <h3 class="text-xl font-bold text-cyan-300 mb-4 text-center">Selecciona un evento</h3>
-                <select id="eventSelect" class="w-full mb-6 px-4 py-2 rounded-lg bg-slate-800 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400">
-                    <option value="" disabled selected>Elige un evento...</option>
-                    <option value="Volleyball">Torneo de Volleyball</option>
-                    <option value="Fútbol">Torneo de Fútbol</option>
-                    <option value="Diseño a Mano">Mejor Diseño a Mano</option>
-                    <option value="Manualidades">Concurso de Manualidades</option>
-                    <option value="Salto Alto">El que Salte Más Alto</option>
-                </select>
-                <div class="flex justify-end gap-2">
-                    <button id="closeRegisterModal" class="px-4 py-2 rounded-lg bg-gray-600 text-white hover:bg-gray-700 transition">Cancelar</button>
-                    <button id="confirmRegister" class="px-4 py-2 rounded-lg bg-cyan-600 text-white hover:bg-cyan-700 transition">Registrarme</button>
-                </div>
-            </div>
-        </div>
-        <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const menu = document.getElementById('menu');
-        menuBtn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-        document.getElementById('openRegisterModal').onclick = function() {
-            var modal = document.getElementById('registerModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        };
-        document.getElementById('closeRegisterModal').onclick = function() {
-            var modal = document.getElementById('registerModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        };
-        document.getElementById('confirmRegister').onclick = function() {
-            var select = document.getElementById('eventSelect');
-            var evento = select.value;
-            if(evento) {
-                alert('¡Te has registrado exitosamente en ' + evento + '!');
-                var modal = document.getElementById('registerModal');
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                select.selectedIndex = 0;
-            } else {
-                select.focus();
-            }
-        };
-        const profilePic = document.getElementById('profilePic');
-        const logoutDropdown = document.getElementById('logoutDropdown');
-        profilePic.addEventListener('click', () => {
-            logoutDropdown.classList.toggle('hidden');
-        });
-        document.addEventListener('click', (e) => {
-            if (!profilePic.contains(e.target) && !logoutDropdown.contains(e.target)) {
-                logoutDropdown.classList.add('hidden');
-            }
-        });
-        </script>
     </main>
     <footer class="bg-purple-600 text-white mt-20">
         <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
@@ -292,5 +163,22 @@
         </div>
         <div class="text-center py-4 bg-purple-700/80 text-white/80 text-sm border-t border-white/10">© 2025 Schoolmeet. Todos los derechos reservados.</div>
     </footer>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menu = document.getElementById('menu');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        const profilePic = document.getElementById('profilePic');
+        const logoutDropdown = document.getElementById('logoutDropdown');
+        profilePic.addEventListener('click', () => {
+            logoutDropdown.classList.toggle('hidden');
+        });
+        document.addEventListener('click', (e) => {
+            if (!profilePic.contains(e.target) && !logoutDropdown.contains(e.target)) {
+                logoutDropdown.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
